@@ -10,13 +10,15 @@ st.set_page_config(page_title = 'Employee Attrition', #Nombre de la pagina, sale
 
 st.title(':clipboard: Job Role') #Titulo del Dash
 
+st.subheader('IBM HR Analytics Employee Attrition & Performance')
+
 st.text('Dataset: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset')
 
 url = 'https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset'
 
 if st.button('View dataset'):
     webbrowser.open_new_tab(url)
-    
+
 ## st.markdown('##') #Para separar el titulo de los KPIs, se inserta un paragrafo usando un campo de markdown
 
 st.markdown('----')

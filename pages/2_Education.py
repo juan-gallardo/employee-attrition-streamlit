@@ -10,6 +10,8 @@ st.set_page_config(page_title = 'Education', #Nombre de la pagina, sale arriba c
 
 st.title(':mortar_board: Education') #Titulo del Dash
 
+st.subheader('IBM HR Analytics Employee Attrition & Performance')
+
 st.text('Dataset: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset')
 
 url = 'https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset'
