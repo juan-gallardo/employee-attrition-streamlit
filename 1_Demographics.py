@@ -1,12 +1,22 @@
 import pandas as pd 
 import plotly.express as px
-import streamlit as st 
+import streamlit as st
+import streamlit.components.v1 as components
+import webbrowser
 
 st.set_page_config(page_title = 'Employee Attrition', #Nombre de la pagina, sale arriba cuando se carga streamlit
                    page_icon = ':chart_with_downwards_trend:', # https://www.webfx.com/tools/emoji-cheat-sheet/
                    layout="wide")
 
 st.title(':earth_americas: Employee Demographics') #Titulo del Dash
+
+st.text('Dataset: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset')
+
+url = 'https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset'
+
+if st.button('View dataset'):
+    webbrowser.open_new_tab(url)
+    
 ## st.markdown('##') #Para separar el titulo de los KPIs, se inserta un paragrafo usando un campo de markdown
 
 st.markdown('----')
@@ -127,9 +137,45 @@ right_column.plotly_chart(distance_job_attrition, use_container_width = True)
 hide_st_style = """
             <style>
    
+            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
            
             </style>
             """
 
 st.markdown(hide_st_style, unsafe_allow_html= True)
+
+components.html(
+    """
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ddfb8eeb9e.js" crossorigin="anonymous"></script>
+    <footer class="bg-light text-center text-black">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+        <!-- Linkedin -->
+        <a class="btn btn-outline-dark btn-floating m-1" href="https://www.linkedin.com/in/juan-gallardo-digital/" target="_blank" role="button"
+            ><i class="fab fa-linkedin-in"></i
+        ></a>
+
+        <!-- Github -->
+        <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com/juan-gallardo" target="_blank" role="button"
+            ><i class="fab fa-github"></i
+        ></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(220, 220, 220, 0.2);">
+        Design by:
+        <a class="text-black" href="https://www.linkedin.com/in/juan-gallardo-digital/"target="_blank">Juan Gallardo</a>
+    </div>
+    <!-- Copyright -->
+    </footer>
+    """,
+    height=600,
+)
