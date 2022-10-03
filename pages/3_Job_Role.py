@@ -10,7 +10,7 @@ st.set_page_config(page_title = 'Employee Attrition', #Nombre de la pagina, sale
 
 st.title(':clipboard: Job Role') #Titulo del Dash
 
-st.subheader('IBM HR Analytics Employee Attrition & Performance')
+st.header('IBM HR Analytics Employee Attrition & Performance')
 
 st.text('Dataset: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset')
 
